@@ -1,3 +1,9 @@
+const loadCookieMonster = function () {
+  setTimeout(function () {
+    Game.LoadMod("https://aktanusa.github.io/CookieMonster/CookieMonster.js");
+  }, 10000);
+};
+
 const game = function () {
   if (
     document.getElementsByClassName("shimmer") &&
@@ -63,4 +69,5 @@ const game = function () {
   }, 20);
 };
 
+loadCookieMonster();
 game();
