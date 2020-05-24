@@ -14,6 +14,7 @@
   ],
 
   "page_action": {
+    "default_icon": "Cookieclicker-grandmacookie.png",
     "default_title": "Cookie Cracker!"
   }
 }
