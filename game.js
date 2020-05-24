@@ -3,23 +3,31 @@ a = function () {
     document.getElementsByClassName("shimmer") &&
     document.getElementsByClassName("shimmer").length != 0
   ) {
-    (node = document.getElementById("CMTimerBarBuff2Type")),
-      (text = node.textContent || node.innerText);
-    console.log(text);
-
-    if (
-      document.getElementById("grimoirePrice1") &&
-      document.getElementById("grimoirePrice1") != null
-    ) {
-      document.getElementById("grimoirePrice1").click();
-    }
     document.querySelector(".shimmer").click();
+    if (
+      (document.getElementById("particle0") &&
+        document.getElementById("particle0").innerText &&
+        document
+          .getElementById("particle0")
+          .innerText.includes("Elder Frenzy")) ||
+      (document.getElementById("particle0") &&
+        document.getElementById("particle0").innerText &&
+        document.getElementById("particle0").innerText.includes("Frenzy"))
+    ) {
+      if (
+        document.getElementById("grimoirePrice1") &&
+        document.getElementById("grimoirePrice1") != null
+      ) {
+        document.getElementById("grimoirePrice1").click();
+      }
+    }
   } else {
     if (
       document.getElementById("lumpsAmount") &&
-      document.getElementById("lumpsAmount").innerText != "0"
+      document.getElementById("lumpsAmount").innerText != "0" &&
+      document.getElementById("productLevel7").innerText == "lvl 0"
     ) {
-      console.log("else if");
+      document.getElementById("productLevel7").click();
     }
 
     for (i = 0; i < document.getElementById("upgrades").children.length; i++) {
