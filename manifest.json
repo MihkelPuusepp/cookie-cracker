@@ -1,0 +1,12 @@
+{
+  "manifest_version": 1,
+
+  "name": "Cookie Cracker",
+
+  "description": "Crack the cookie clicker",
+  "version": "0.1",
+
+  "page_action": {
+    "default_title": "Cookie Cracker!"
+  }
+}
