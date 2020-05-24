@@ -1,8 +1,12 @@
-const loadCookieMonster = function () {
-  setTimeout(function () {
-    Game.LoadMod("https://aktanusa.github.io/CookieMonster/CookieMonster.js");
-  }, 10000);
-};
+// const loadCookieMonster = function () {
+//   if (
+//     window.confirm(
+//       'If you click "ok" you would be redirected . Cancel will load this website '
+//     )
+//   ) {
+//     window.location.href = `javascript:(function(){Game.LoadMod('https://aktanusa.github.io/CookieMonster/CookieMonster.js');}());`;
+//   }
+// };
 
 const game = function () {
   if (
@@ -69,5 +73,5 @@ const game = function () {
   }, 20);
 };
 
-loadCookieMonster();
+// loadCookieMonster();
 game();
