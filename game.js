@@ -1,4 +1,4 @@
-a = function () {
+const game = function () {
   if (
     document.getElementsByClassName("shimmer") &&
     document.getElementsByClassName("shimmer").length != 0
@@ -59,8 +59,8 @@ a = function () {
   }
   document.getElementById("bigCookie").click();
   setTimeout(function () {
-    a();
+    game();
   }, 20);
 };
 
-a();
+game();
