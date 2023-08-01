@@ -48,10 +48,14 @@ const game = function () {
 					.getElementById("upgrade" + i)
 					.children[0].classList.contains("CMBackBlue") &&
 				document.getElementById("upgrade" + i).classList.contains("enabled") &&
-                document.getElementById("upgrade" + i).dataset.id !== '331'
+				document.getElementById("upgrade" + i).dataset.id !== '331'
 			) {
 				document.getElementById("upgrade" + i).click();
 			}
+		}
+		const prompt = document.getElementById('promptOption0');
+		if (prompt && prompt.onclick?.toString()?.includes('Game.UpgradesById[69]')) {
+			prompt.click();
 		}
 		document.querySelector('.storeBulkAmount[style="color: rgb(0, 255, 0);"]:not(.selected)')?.click();
 		for (
