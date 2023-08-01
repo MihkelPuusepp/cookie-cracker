@@ -19,10 +19,11 @@ const game = function () {
 				document.getElementById("particle0").innerText &&
 				document
 					.getElementById("particle0")
-					.innerText.includes("Elder Frenzy")) ||
-			(document.getElementById("particle0") &&
-				document.getElementById("particle0").innerText &&
-				document.getElementById("particle0").innerText.includes("Frenzy"))
+					.innerText.includes("Elder Frenzy"))
+			// ||
+			// (document.getElementById("particle0") &&
+			// 	document.getElementById("particle0").innerText &&
+			// 	document.getElementById("particle0").innerText.includes("Frenzy"))
 		) {
 			if (
 				document.getElementById("grimoirePrice1") &&
@@ -48,7 +49,8 @@ const game = function () {
 					.getElementById("upgrade" + i)
 					.children[0].classList.contains("CMBackBlue") &&
 				document.getElementById("upgrade" + i).classList.contains("enabled") &&
-				document.getElementById("upgrade" + i).dataset.id !== '331'
+				document.getElementById("upgrade" + i).dataset.id !== '331' &&
+				document.getElementById("upgrade" + i).dataset.id !== '74'
 			) {
 				document.getElementById("upgrade" + i).click();
 			}
@@ -79,4 +81,5 @@ const game = function () {
 	}, 20);
 };
 
+// loadCookieMonster();
 game();
