@@ -52,6 +52,7 @@ const game = function () {
         document.getElementById("upgrade" + i).click();
       }
     }
+    document.querySelector('.storeBulkAmount[style="color: rgb(0, 255, 0);"]:not(.selected)')?.click()
     for (
       i = 0;
       i < document.getElementById("products").children.length - 1;
