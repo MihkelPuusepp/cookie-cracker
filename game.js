@@ -3,9 +3,11 @@ Game.LoadMod(
 );
 
 function gozamok() {
-  for (let i = 0; i < 20000; i++) {
-    Game.Objects.Factory.sell(-1);
-    Game.Objects.Factory.buy(20);
+  if (Game.Objects?.Temple?.minigame?.slot[0] === 2) {
+    for (let i = 0; i < 20000; i++) {
+      Game.Objects.Factory.sell(-1);
+      Game.Objects.Factory.buy(20);
+    }
   }
   setTimeout(gozamok, 10000);
 }
@@ -26,16 +28,14 @@ function loop() {
     document.querySelector("#grimoirePrice1")?.click();
   }
 
-  // checks if have more than 1 sugarlump and temple minigame not owned
-  if (
-    document.getElementById("lumpsAmount")?.innerText != "0" &&
-    document.getElementById("productLevel6").innerText == "lvl 0"
-  ) {
+  // checks if gozamok in place, if not place it
+  if (Game.Objects?.Temple?.minigame?.slot[0] !== 2) {
     document.getElementById("productLevel6").click();
-    g = Game.ObjectsById[6].minigame.godsById[2];
-    Game.ObjectsById[6].minigame.dragGod(g);
-    Game.ObjectsById[6].minigame.hoverSlot(0);
-    Game.ObjectsById[6].minigame.dropGod();
+    document.getElementById("productMinigameButton6").click();
+    g = Game.ObjectsById[6]?.minigame?.godsById[2];
+    Game.ObjectsById[6]?.minigame?.dragGod(g);
+    Game.ObjectsById[6]?.minigame?.hoverSlot(0);
+    Game.ObjectsById[6]?.minigame?.dropGod();
   }
 
   // checks if have more than 1 sugarlump and wizard tower minigame not owned
@@ -49,9 +49,21 @@ function loop() {
   // loop upgrades and check if blue color, exclude chime on and remove elder covenant
   for (i = 0; i < document.getElementById("upgrades").children.length; i++) {
     if (
-      document
+      (document
         .getElementById("upgrade" + i)
-        .children[0]?.classList.contains("CMBackBlue") &&
+        .children[0]?.classList.contains("CMBackGray") ||
+        document
+          .getElementById("upgrade" + i)
+          .children[0]?.classList.contains(
+            Game.Objects?.Temple?.minigame?.slot[0] === 2
+              ? "CMBackYellow"
+              : "CMBackBlue"
+          ) ||
+        document
+          .getElementById("upgrade" + i)
+          .children[0]?.classList.contains(
+            Game.Objects?.Temple?.minigame?.slot[0] === 2 ? "CMBackBlue" : ""
+          )) &&
       document.getElementById("upgrade" + i).classList.contains("enabled") &&
       document.getElementById("upgrade" + i).dataset.id !== "331" &&
       document.getElementById("upgrade" + i).dataset.id !== "74"
@@ -79,9 +91,10 @@ function loop() {
     i < document.getElementById("products").children.length - 1;
     i++
   ) {
+    var color =
+      Game.Objects.Temple.amount > 0 ? "rgb(255, 255, 0)" : "rgb(0, 255, 0)";
     if (
-      document.getElementById("productPrice" + i)?.style.color ==
-        "rgb(255, 255, 0)" &&
+      document.getElementById("productPrice" + i)?.style.color == color &&
       document.getElementById("product" + i).classList.contains("enabled")
     ) {
       document.getElementById("product" + i).click();
