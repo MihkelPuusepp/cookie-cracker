@@ -32,6 +32,10 @@ function loop() {
     document.getElementById("productLevel6").innerText == "lvl 0"
   ) {
     document.getElementById("productLevel6").click();
+    g = Game.ObjectsById[6].minigame.godsById[2];
+    Game.ObjectsById[6].minigame.dragGod(g);
+    Game.ObjectsById[6].minigame.hoverSlot(0);
+    Game.ObjectsById[6].minigame.dropGod();
   }
 
   // checks if have more than 1 sugarlump and wizard tower minigame not owned
